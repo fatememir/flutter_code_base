@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 
-import '../utils/constant/constant.dart';
-import 'api_error.dart';
-import 'api_result.dart';
+import '../../utils/constant/constant.dart';
+import '../api_error.dart';
+import '../api_result.dart';
 
 extension DioExtensions on Dio {
-  Future<ApiResult<T>> safeDelete<T>(String path, T Function(Map<String, dynamic>) mapper,
+  Future<ApiResult<T>> safePut<T>(String path, T Function(Map<String, dynamic>) mapper,
       {data,
       Map<String, dynamic>? queryParameters,
       Options? options,
@@ -13,15 +13,15 @@ extension DioExtensions on Dio {
       ProgressCallback? onSendProgress,
       ProgressCallback? onReceiveProgress}) async {
     try {
-      final response = await delete(
-        Constants.serverUrlDio + path,
-        data: data,
-        queryParameters: queryParameters,
-        options: options,
-        cancelToken: cancelToken,
-      );
+      final response = await put(Constants.serverUrlDio + path,
+          data: data,
+          queryParameters: queryParameters,
+          options: options,
+          cancelToken: cancelToken,
+          onSendProgress: onSendProgress,
+          onReceiveProgress: onReceiveProgress);
 
-      print("delete res= " + response.toString());
+      print("post res= " + response.toString());
 
       return ApiResult.fromResponse(response, mapper);
     } on DioException catch (exception) {

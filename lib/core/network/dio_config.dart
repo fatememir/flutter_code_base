@@ -7,8 +7,8 @@ class DioConfig {
     final Dio dio = Dio();
 
     dio.options = BaseOptions(
-      baseUrl: Constants.serverUrlDio,
-    );
+        baseUrl: Constants.serverUrlDio, connectTimeout: const Duration(seconds: 10), receiveTimeout: const Duration(seconds: 10));
+
     return dio;
   }
 }

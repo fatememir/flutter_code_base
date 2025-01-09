@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../themes/my_colors.dart';
+import '../themes/app_colors.dart';
 
 class MyNetworkImage extends StatelessWidget {
   const MyNetworkImage({

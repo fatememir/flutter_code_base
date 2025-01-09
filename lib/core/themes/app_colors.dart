@@ -12,4 +12,11 @@ class AppColors {
   static const Color white_60 = Color(0x99FFFFFF);
   static const shimmerStartColor = Color(0xFFC5C5C5);
   static const shimmerHighlightColor = Color(0xFFF4F4F4);
+  static const lightOrangeBackground = Color(0xFFFFF4E4);
+  static const lightRedText = Color(0xFFFFE2E5);
+  static const lightGreenBackground = Color(0xFFE7F4E8);
+  static const gray900 = Color(0xFF141414);
+
+
+
 }
